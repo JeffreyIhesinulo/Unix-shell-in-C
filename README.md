@@ -34,14 +34,18 @@ gcc -Wall -Wextra -o mush shell.c
 ```
 
 Example session:
-    mush> pwd
-    /home/jeffrey/projects/mush
-    mush> cd ..
-    mush> ls
-    mush shell.c Makefile README.md
-    mush> exit
-    Bye!
 
+```
+mush> pwd
+/home/jeffrey/projects/mush
+mush> ls
+mush  shell.c  Makefile  README.md
+mush> cd ..
+mush> pwd
+/home/jeffrey/projects
+mush> exit
+Bye!
+```
 ## How it works
 
 - Input is read with `fgets` and split into arguments with `strtok`
