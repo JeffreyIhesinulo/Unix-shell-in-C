@@ -1,0 +1,9 @@
+# Compiled binary
+mush
+
+# Object files
+*.o
+
+# Other common junk
+*.out
+a.out
