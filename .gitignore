@@ -7,3 +7,5 @@ mush
 # Other common junk
 *.out
 a.out
+shell
+.idea/

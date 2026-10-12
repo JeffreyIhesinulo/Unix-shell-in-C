@@ -72,7 +72,7 @@ int main(void)
                 args[1] = getenv("HOME");
                 if (args[1] == NULL)
                 {
-                    fprintf(stderr, "cd: HOME variable in not set\n");
+                    fprintf(stderr, "cd: HOME variable is not set\n");
                     continue;
                 }
             }
@@ -135,14 +135,9 @@ int main(void)
             // Parent process: wait for the child to finish before showing the prompt again
             wait(&status);
 
-            if (WIFEXITED(status))
+            if (WIFSIGNALED(status))
             {
-                int exit_status = WEXITSTATUS(status);
-                // exit_status currently unused, but available for future error handling/logging
-            }
-            else
-            {
-                printf("Unexpected programm shutdown\n");
+                printf("Process terminated by signal %d\n", WTERMSIG(status));
             }
         }
     }
